@@ -4,4 +4,4 @@ var floatAgeYears, floatAgeDays, floatAgeMonths, floatAgeWeeks, floatAgeFortnigh
      floatAgeWeeks= floatAgeDays/7;
      floatAgeFortnights= floatAgeDays/14;
      floatAgeMonths= floatAgeYears*12;
-     alert("Your age in Days is" + floatAgeDays);
+     alert("Your age in Days is " + floatAgeDays);
