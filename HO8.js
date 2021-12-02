@@ -13,7 +13,7 @@ var intMax, intMin, intRandom, intGuess, intCount;
 
 intMin = parseInt(prompt("Please enter the bottom side of your range to guess from."));
 
-if (isNaN(intMin) || intMin < 0) {
+while (isNaN(intMin) || intMin < 0) {
     
     alert("Your entry was either less than zero or was not a number, please enter another option"); 
     intMin = parseInt(prompt("Please enter the bottom side of your range to guess from."));
@@ -28,7 +28,7 @@ if (isNaN(intMin) || intMin < 0) {
 
 intMax = parseInt(prompt("Now, please enter the top side of your range to guess from"));
 
-if (isNaN(intMax) || intMax-intMin < 2) {
+while (isNaN(intMax) || intMax-intMin < 2) {
     alert("You entry was either not a number or was not more than two integers higher than your min.");
     intMax = parseInt(prompt("Now, please enter the top side of your range to guess from"));
 }
@@ -48,16 +48,35 @@ intRandom = parseInt (Math.floor(Math.random()*(intMax-intMin+1))+intMin);
 
 // set the loop counter
 
-intCount = "";
+intCount = 0;
 
 /* the following section prompts the user to enter their guess
  * and then validates that the user entered an actual number and makes sure that the
  * number is between the allowed max and min number choices.
 */
 
+while (intGuess != intRandom) {
+
 intGuess = parseInt(prompt("Please enter your guess now!"));
+intCount++;
 
+    if (intGuess > intMax || intGuess < intMin || isNaN(intGuess)) {
+        alert("You've guessed outside of the range or inputed a non-number.");
+    }
 
+    if (intGuess === intRandom) {
+    
+    } else if (intGuess > intRandom) {
+    
+        alert("You've guessed too high! Try Again.");
+        
+    } else if (intGuess < intRandom) {
+        
+        alert("You've guessed too low! Try Again.");
+            
+        }
+
+}
 
 
 
